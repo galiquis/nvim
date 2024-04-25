@@ -8,6 +8,8 @@ return {
             ensure_installed = {"lua", "python", "javascript"},
             sync_install = false,
             auto_install = true,
+            ignore_install = {},
+            modules = {},
         })
     end
 }
