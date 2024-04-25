@@ -105,6 +105,7 @@ return {
     -- Enable the following language servers
     local servers = {
       pyright = {},
+      debugpy = {},
       ruff = {},
       mypy = {},
       black = {},
