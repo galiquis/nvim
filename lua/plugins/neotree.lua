@@ -7,7 +7,7 @@ return {
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more informatio
     },
-    config = function() 
+    config = function()
         -- Neotree keys
         vim.keymap.set('n', '<leader><tab>', ':Neotree filesystem reveal left<CR>')
       end

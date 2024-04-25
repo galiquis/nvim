@@ -105,6 +105,9 @@ return {
     -- Enable the following language servers
     local servers = {
       pyright = {},
+      ruff = {},
+      mypy = {},
+      black = {},
       lua_ls = {
         settings = {
           Lua = {
