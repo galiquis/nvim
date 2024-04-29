@@ -25,5 +25,6 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 -- replace words in file
 vim.keymap.set('n', '<leader>se', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
+-- Undotree toggle
+vim.keymap.set('n', '<leader>u', ':UndotreeToggle<CR>')
 

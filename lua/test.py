@@ -21,5 +21,5 @@ def primes(n: int) -> List[int]:
 
 
 xs = primes(100)
-ys = primes("foo")
-print(xs)
+# ys = primes("foo")
+print(f"test, 1 2 3 {xs}", xs)
