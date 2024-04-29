@@ -8,7 +8,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-
 -- set tab stops
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
