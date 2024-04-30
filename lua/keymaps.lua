@@ -28,3 +28,5 @@ vim.keymap.set('n', '<leader>se', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 -- Undotree toggle
 vim.keymap.set('n', '<leader>u', ':UndotreeToggle<CR>')
 
+vim.api.nvim_set_keymap('t', '<C-t>', '<C-\\><C-n>:CFloatTerm<CR>', {noremap = true, silent = true})
+
