@@ -21,4 +21,4 @@ vim.keymap.set({'n'}, '<f9>', '', {
     callback = run_curr_python_file
 })
 vim.keymap.set({'t'}, '<f9>', '<C-\\><C-n>:q<CR>', {
-    desc = "Run .py file via Neovim built-in terminal",})
+    desc = "Exit terminal when in terminal mode.",})
