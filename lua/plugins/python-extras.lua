@@ -1,5 +1,4 @@
------------------------------------------------------------------------------
--- EDITING SUPPORT PLUGINS
+-- Python support plugins 
 -- some plugins that help with python-specific editing operations
 return {
     -- Docstring creation

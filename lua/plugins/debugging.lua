@@ -1,3 +1,5 @@
+-- Debugging configuration
+
 return {
     {
         "mfussenegger/nvim-dap",

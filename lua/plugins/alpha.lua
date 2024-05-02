@@ -1,3 +1,4 @@
+-- splash screen for Neovim startup
 return {
     "goolord/alpha-nvim",
     dependencies = {

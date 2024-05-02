@@ -1,3 +1,6 @@
+-- NeoTree configuration
+-- NeoTree is a file explorer plugin for Neovim.
+
 return {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",

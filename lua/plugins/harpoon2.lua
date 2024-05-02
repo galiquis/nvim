@@ -1,3 +1,6 @@
+-- Harpoon is a bookmarking plugin for neovim. 
+-- It allows you to save and load files and directories for quick access.
+
 return {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",

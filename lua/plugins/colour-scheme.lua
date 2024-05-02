@@ -1,3 +1,5 @@
+-- Main colour scheme for Neovim
+
 return {
     "catppuccin/nvim",
     lazy = false,
@@ -16,7 +18,7 @@ return {
             dim_inactive = {
                 enabled = false, -- dims the background color of inactive window
                 shade = "dark",
-                percentage = 0.15, -- percentage of the shade to apply to the inactive window
+                percentage = 0.95, -- percentage of the shade to apply to the inactive window
             },
             no_italic = false, -- Force no italic
             no_bold = false, -- Force no bold
@@ -37,7 +39,32 @@ return {
                 -- miscs = {}, -- Uncomment to turn off hard-coded styles
             },
             color_overrides = {},
-            custom_highlights = {},
+            custom_highlights = function(colors)
+                return {
+                    FloatBorder = { fg = colors.lavender },
+                    NvimTreeEndOfBuffer = { fg = colors.mantle },
+                    NormalFloat = { bg='#3B4252'}, -- colours float window background
+                    -- NvimTreeIndentMarker = { fg = colors.surface0 },
+                    CmpItemMenu = { fg = colors.overlay2 },
+                    TelescopeNormal = { link = 'NormalFloat', bg = '#3B4252' },
+                    TelescopeSelection = { link = 'NormalFloat', bg = colors.surface0 },
+                    TelescopeBorder = { link = 'FloatBorder', bg = '#3B4252', fg = '#3B4252' },
+                    MiniIndentscopeSymbol = { fg = colors.surface1 },
+                    CopilotSuggestion = { fg = colors.overlay2 },
+                    TelescopeNormal = {},
+                    TelescopeBorder = {},
+                    TelescopeSelectionCaret = {},
+                    TelescopeMatching = {},
+                    TelescopePromptNormal = {},
+                    TelescopePromptTitle = {},
+                    TelescopePromptPrefix = {},
+                    TelescopePromptBorder = {},
+                    TelescopePreviewTitle = {},
+                    TelescopePreviewBorder = {},
+                    TelescopeResultsTitle = {},
+                    TelescopeResultsBorder = {},
+                }
+            end,
             default_integrations = true,
             integrations = {
                 cmp = true,
@@ -58,24 +85,3 @@ return {
 
     end,
 }
---return {
---    {
---        "folke/tokyonight.nvim",
---        lazy = false,
---        priority = 1000,
---        opts = {},
---        config = function()
---            require("tokyonight").setup({
---            sytle = "storm",
---            transparent = true,
---            terminal_colors = true,
---            styles = {
---                comments = { italic = false },
---                keywords = { italic = false },
---                sidebars = "dark",
---                floats = "dark",
---            },
---            })
---        end,
---    }
---}

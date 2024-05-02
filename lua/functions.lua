@@ -1,3 +1,5 @@
+-- Additional functions for Neovim
+
 local function run_curr_python_file()
     -- Get file name in the current buffer
     local file_name = vim.api.nvim_buf_get_name(0)

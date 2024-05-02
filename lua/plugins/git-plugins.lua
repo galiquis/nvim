@@ -1,3 +1,5 @@
+-- Git plugins
+
 return {
     {
         "tpope/vim-fugitive",

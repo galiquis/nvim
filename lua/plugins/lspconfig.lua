@@ -1,3 +1,6 @@
+-- Main configuration file for LSP servers and clients
+-- LSP servers and clients are used to provide language-specific features in Neovim
+
 return {
   { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',

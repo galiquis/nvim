@@ -1,3 +1,6 @@
+-- Telescope configuration
+-- Telescope is a plugin that provides a highly extendable fuzzy finder over lists.
+
 return {
     {
         'nvim-telescope/telescope.nvim',

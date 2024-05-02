@@ -1,3 +1,6 @@
+-- None-ls configuration
+-- None-ls is a plugin that provides a simple and easy way to use the Language Server Protocol (LSP) in Neovim.
+
 return {
     "nvimtools/none-ls.nvim",
     config = function()
