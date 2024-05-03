@@ -9,6 +9,9 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
+-- hide tildes at the end of the file
+vim.opt.fillchars = { eob = " " }
+
 
 -- set tab stops
 vim.cmd("set expandtab")
