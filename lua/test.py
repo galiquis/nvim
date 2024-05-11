@@ -3,7 +3,7 @@ This is a test file to check the type hinting in Python.
 '''
 
 from typing import List
-
+# test
 
 def primes(n: int) -> List[int]:
     """Return a list of prime numbers less than n."""

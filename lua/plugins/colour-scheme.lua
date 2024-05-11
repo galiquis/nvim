@@ -1,8 +1,5 @@
 return {
 
-    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
-    { "tiagovla/tokyodark.nvim", priority = 1000, config = true, opt = ...},
-    { "tiagovla/tokyodark.nvim", priority = 1000, config = true, opt = ...},
     { "folke/tokyonight.nvim", priority = 1000,},
     { "navarasu/onedark.nvim",
         priority = 1000,
@@ -11,7 +8,7 @@ return {
                 -- Main options --
                 style = 'darker', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
                 transparent = true,  -- Show/hide background
-                term_colors = false, -- Change terminal color as per the selected theme style
+                term_colors = true, -- Change terminal color as per the selected theme style
                 cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
                 -- toggle theme style ---
@@ -22,7 +19,7 @@ return {
                 -- Options are italic, bold, underline, none
                 -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
                 code_style = {
-                    comments = 'italic',
+                    comments = 'italic,',
                     keywords = 'none',
                     functions = 'bold',
                     strings = 'none',
@@ -44,6 +41,7 @@ return {
                     TelescopePreviewBorder = { bg = "$bg_d", fg = "$light_grey"},
                     FloatBorder = { bg = "$bg_d" },
                     NormalFloat = { bg = "$bg_d" },
+                    --["@comment"] = { fg = "#272e23" },
                     -- ["@keyword"] = {fg = '$green'},
                     -- ["@string"] = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
                     -- ["@function"] = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
