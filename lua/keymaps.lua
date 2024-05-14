@@ -32,3 +32,14 @@ vim.keymap.set('n', '<leader>u', ':UndotreeToggle<CR>')
 
 vim.api.nvim_set_keymap('t', '<C-t>', '<C-\\><C-n>:CFloatTerm<CR>', {noremap = true, silent = true})
 
+-- in visual mode, ctrl-c and ctrl-v copy and paste 
+vim.api.nvim_set_keymap('v', '<C-c>', '"+y', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<C-x>', '"+d', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<C-v>', '"+p', {noremap = true, silent = true})
+
+-- tab navigation
+vim.api.nvim_set_keymap('n', '<TAB>', ':tabnext<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<S-TAB>', ':tabprevious<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Tab>n', ':tabnew<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Tab>q', ':tabclose<CR>', {noremap = true, silent = true})
+
