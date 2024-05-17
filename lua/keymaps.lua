@@ -43,3 +43,6 @@ vim.api.nvim_set_keymap('n', '<S-TAB>', ':tabprevious<CR>', {noremap = true, sil
 vim.api.nvim_set_keymap('n', '<Tab>n', ':tabnew<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Tab>q', ':tabclose<CR>', {noremap = true, silent = true})
 
+
+-- rename items in the buffer <leader>rn to <f2>
+vim.api.nvim_set_keymap('n', '<F2>', '<leader>rn', {noremap = true, silent = true})
