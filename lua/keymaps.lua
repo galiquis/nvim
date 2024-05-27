@@ -1,5 +1,8 @@
--- Keymaps and autocommands
+-- Keymaps and autocommands configuration
 --
+-- Define the options for the keymaps
+local opts = { noremap = true, silent = true }
+
 -- Set <space> as the leader key
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
@@ -30,19 +33,19 @@ vim.keymap.set('n', '<leader>se', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 -- Undotree toggle
 vim.keymap.set('n', '<leader>u', ':UndotreeToggle<CR>')
 
-vim.api.nvim_set_keymap('t', '<C-t>', '<C-\\><C-n>:CFloatTerm<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<C-t>', '<C-\\><C-n>:CFloatTerm<CR>', opts)
 
 -- in visual mode, ctrl-c and ctrl-v copy and paste 
-vim.api.nvim_set_keymap('v', '<C-c>', '"+y', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<C-x>', '"+d', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<C-v>', '"+p', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<C-c>', '"+y', opts)
+vim.api.nvim_set_keymap('v', '<C-x>', '"+d', opts)
+vim.api.nvim_set_keymap('v', '<C-v>', '"+p', opts)
 
 -- tab navigation
-vim.api.nvim_set_keymap('n', '<TAB>', ':tabnext<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-TAB>', ':tabprevious<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Tab>n', ':tabnew<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Tab>q', ':tabclose<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<TAB>', ':tabnext<CR>', opts)
+vim.api.nvim_set_keymap('n', '<S-TAB>', ':tabprevious<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Tab>n', ':tabnew<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Tab>q', ':tabclose<CR>', opts)
 
 
 -- rename items in the buffer <leader>rn to <f2>
-vim.api.nvim_set_keymap('n', '<F2>', '<leader>rn', {noremap = true, silent = true})
+vim.keymap.set({'n', 'i', 'v'}, '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
