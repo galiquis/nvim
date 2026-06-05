@@ -16,5 +16,5 @@ vim.opt.rtp:prepend(lazypath)
 require("functions")
 require("options")
 require("keymaps")
+require("startup_check") -- warns about missing external tools (rg/git/node/cc)
 require("lazy").setup("plugins")
-

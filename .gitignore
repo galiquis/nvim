@@ -1,0 +1,14 @@
+# Python artifacts that crept into the repo (remove from tracking once):
+#   git rm -r --cached lua/__pycache__ lua/test.py
+__pycache__/
+*.py[cod]
+
+# Editor / OS noise
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+./old
+
+# NOTE: lazy-lock.json is intentionally NOT ignored — it pins plugin versions
+# and must be committed so every machine/account restores identical versions.

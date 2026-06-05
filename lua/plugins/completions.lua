@@ -1,12 +1,11 @@
--- Completion plugins 
+-- Completion plugins
+-- NOTE: github/copilot.vim was removed here — Copilot is now handled solely by
+-- copilot.lua (see lua/plugins/copilot.lua) to avoid duplicate inline engines.
 
 return {
 	{
 		"hrsh7th/cmp-nvim-lsp",
 	},
-    {
-        "github/copilot.vim",
-    },
 	{
 		"L3MON4D3/LuaSnip",
 		dependencies = {
@@ -39,7 +38,7 @@ return {
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
-					{ name = "luasnip" }, -- For luasnip users.
+					{ name = "luasnip" },
 				}, {
 					{ name = "buffer" },
 				}),

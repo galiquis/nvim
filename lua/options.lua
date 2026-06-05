@@ -54,3 +54,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- ============================================================================
+-- Remote clipboard via OSC 52  (ADDED for working over SSH)
+-- ----------------------------------------------------------------------------
+-- On a headless server there's no system clipboard, so yanks to the + register
+-- normally go nowhere useful. OSC 52 tunnels the copy through your terminal to
+-- YOUR LOCAL machine's clipboard. Neovim 0.11 has it built in; your local
+-- terminal must also permit OSC 52 (most modern ones do, some need it enabled).
+--
+-- Only activated inside an SSH session, so the same config still uses the
+-- native clipboard if you ever run it locally.
+if vim.env.SSH_TTY or vim.env.SSH_CONNECTION then
+  local osc52 = require('vim.ui.clipboard.osc52')
+  vim.g.clipboard = {
+    name = 'OSC 52',
+    copy = { ['+'] = osc52.copy('+'), ['*'] = osc52.copy('*') },
+    paste = { ['+'] = osc52.paste('+'), ['*'] = osc52.paste('*') },
+  }
+end
