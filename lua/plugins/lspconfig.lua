@@ -99,15 +99,24 @@ return {
       -- Language servers to auto-install AND auto-enable. Their per-server
       -- settings live in lsp/<name>.lua. Note: NO rust_analyzer here — that is
       -- handled by rustaceanvim (lua/plugins/rust.lua).
+      -- Servers to auto-install AND auto-enable. Their per-server settings live
+      -- in lsp/<name>.lua. NO rust_analyzer here — rustaceanvim owns that.
+      local ensure_lsp = {
+        'basedpyright', -- Python types
+        'ruff',         -- Python lint + format
+        'lua_ls',       -- Lua
+      }
+
+      -- zls is special: it must match your Zig compiler version. If a zls is
+      -- already on PATH (a hand-installed, version-matched one — e.g. on the
+      -- Linux server), DON'T let Mason fetch a second copy that could drift.
+      -- If there's no system zls (e.g. on Windows), let Mason manage it.
+      if vim.fn.executable('zls') == 0 then
+        table.insert(ensure_lsp, 'zls')
+      end
+
       require('mason-lspconfig').setup({
-        ensure_installed = {
-          'basedpyright', -- Python types
-          'ruff',         -- Python lint + format
-          'lua_ls',       -- Lua
-          'zls',          -- Zig
-        },
-        -- automatic_enable = true is the default; installed servers get
-        -- vim.lsp.enable()'d for you.
+        ensure_installed = ensure_lsp,
       })
 
       -- Non-LSP tooling (formatters, debuggers) installed by mason but used
